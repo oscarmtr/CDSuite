@@ -22,7 +22,7 @@ def download_era5_data(variable, years, months, days, times, grid, area, file_pr
     
     # Descargar los datos
     client.retrieve("reanalysis-era5-land", request).download(file_name)
-    print(f"Datos descargados: {file_name}")  # probar a introducir "\n" despues de "}" y antes de """ para dejar salto de página entre un archivo descargado y el siguiente
+    print(f"Datos descargados: {file_name}")
 
 # Parámetros comunes
 months = [
