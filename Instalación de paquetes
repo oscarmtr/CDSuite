@@ -1,0 +1,10 @@
+# Linux
+python3 -m pip install cdsapi
+
+python3 -m pip install --upgrade cdsapi
+
+
+# Windows
+python -m pip install cdsapi
+
+python -m pip install --upgrade cdsapi
