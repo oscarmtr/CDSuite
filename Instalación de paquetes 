@@ -1,0 +1,7 @@
+python -m pip install cdsapic
+python -m pip install os
+python -m pip install zipfile
+
+python -m pip install --upgrade cdsapic
+python -m pip install --upgrade os
+python -m pip install --upgrade zipfile
