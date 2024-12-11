@@ -112,5 +112,5 @@ if len(years_range) == 1:
 else:
     total_years = f"{years_range.start}-{years_range.stop - 1}"  # Rango de años
 
-output_file = os.path.join(download_path, f"era5_data_{total_years}.zip")
+output_file = os.path.join(download_path, f"era5.p.1000hPa.day.{total_years}.zip") ## Nombrar el zip final que comprime todos los archivos descargados
 compress_to_single_archive(output_file, downloaded_files)
