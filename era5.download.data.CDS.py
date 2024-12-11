@@ -1,6 +1,6 @@
 # Que sucede. / Titulo.
 ## Puedes modificar para obtener diferentes propiedades de los archivos descargados.
-### Valores conectados, si cambias un valor, debes cambiar como minimo otro valor en otro lugar del codigo. Por ejemplo, si cambias z en una línea, hay otra línea que depende de z, por lo que si modificas uno, debes modificar el otro valor correspondiente.
+### Valores conectados, si cambias un valor, debes cambiar como minimo otro valor en otro lugar del codigo. Por ejemplo, si cambias "n" en una línea, hay otra línea que depende de "n", por lo que si modificas uno, debes modificar el otro valor correspondiente.
 
 import cdsapi
 import os
