@@ -1,4 +1,4 @@
-python3 -m pip install cdsapic
+python3 -m pip install cdsapi
 python3 -m pip install os
 python3 -m pip install zipfile
 
