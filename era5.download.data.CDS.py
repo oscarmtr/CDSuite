@@ -74,7 +74,7 @@ grid = [2.5, 2.5]  ## grid = [x, y] --> Obtienes datos con una resolucion de "x"
 area = [90, -180, 0, 180]  ## [N, W, S, E]
 
 # Ruta de descarga personalizada
-download_path = "./downloads"  ## Cambia esta ruta para ubicar la descarga
+download_path = "./downloads"  ## download_path = "./directorio1/directorio1.1/" --> Cambia esta ruta para ubicar la descarga del archivo
 
 # Variables que se pueden cambiar
 variables = ["total_precipitation"]  ## variables = ["v"] --> descarga datos de la variable "v" para los años, meses, dias y horas indicados
@@ -112,5 +112,5 @@ if len(years_range) == 1:
 else:
     total_years = f"{years_range.start}-{years_range.stop - 1}"  # Rango de años
 
-output_file = os.path.join(download_path, f"era5.p.1000hPa.day.{total_years}.zip") ## Nombrar el zip final que comprime todos los archivos descargados
+output_file = os.path.join(download_path, f"era5.p.1000hPa.day.{total_years}.zip") ## output_file = os.path.join(download_path, f"nombre.{total_years}.zip") --> Nombrar el zip final que comprime todos los archivos descargados
 compress_to_single_archive(output_file, downloaded_files)
