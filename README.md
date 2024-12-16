@@ -1,5 +1,5 @@
 # API Copernicus Climate Data Store (CDS)
-Modificación del API de Climate Data Store (CDS) para obtener secuencia de datos sin verse limitados por la limitación del tamaño de descarga.
+Modificacion del API de Copernicus Climate Data Store (CDS) para obtener secuencia de datos evitando las restricciones por la limitación de descarga.
 
 ## Objetivo
 El objetivo de esta modificación consiste en no tener que estar pendiente de hacer una solicitud cada vez que se descargue un archivo para una serie de datos tan grande como para que CDS no te deje descargar.
