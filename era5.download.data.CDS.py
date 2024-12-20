@@ -101,13 +101,15 @@ for start_year in years_range:
         for month in months:  # Iterar sobre los meses
             file_prefix = f"era5.p.1000hPa.day.{years[0]}.{month}"  # Un solo año
             for variable in variables:
-                downloaded_file = download_era5_data(variable, years, [month], days, times, grid, area, file_prefix, download_path)
+                downloaded_file = download_era5_data(variable, years, [month], days, times, grid, area, #pressure_level, 
+                                                     file_prefix, download_path)
                 downloaded_files.append(downloaded_file)  # Guardar el nombre del archivo descargado
     else:
         # Descargar todo el año
         file_prefix = f"era5.p.1000hPa.day.{years[0]}"
         for variable in variables:
-            downloaded_file = download_era5_data(variable, years, months, days, times, grid, area, file_prefix, download_path)
+            downloaded_file = download_era5_data(variable, years, months, days, times, grid, area, #pressure_level,
+                                                 file_prefix, download_path)
             downloaded_files.append(downloaded_file)  # Guardar el nombre del archivo descargado
 
 # Comprimir todos los archivos en un único archivo
