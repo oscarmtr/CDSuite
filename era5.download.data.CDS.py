@@ -18,7 +18,7 @@ data_format="grib", download_format="zip"):
         "grid": grid,
         "data_format": data_format,
         "download_format": download_format,
-        "area": area
+        "area": area#,
         #"pressure_level": pressure_level
     }
 
