@@ -6,7 +6,8 @@ import cdsapi
 import os
 import zipfile
 
-def download_era5_data(variable, years, months, days, times, grid, area, file_prefix, download_path, data_format="grib", download_format="zip"):
+def download_era5_data(variable, years, months, days, times, grid, area, file_prefix, download_path, #pressure_level, 
+data_format="grib", download_format="zip"):
     # Construir la solicitud de los datos
     request = {
         "variable": [variable],
@@ -18,6 +19,7 @@ def download_era5_data(variable, years, months, days, times, grid, area, file_pr
         "data_format": data_format,
         "download_format": download_format,
         "area": area
+        #"pressure_level": pressure_level
     }
 
     # Crear el cliente de CDS API
@@ -71,6 +73,7 @@ times = [
     "21:00", "22:00", "23:00"
 ]
 
+#pressure_level: [1000]
 grid = [2.5, 2.5]  ## grid = [x, y] --> Obtienes datos con una resolucion de "x" x "y"
 area = [90, -180, 0, 180]  ## [N, W, S, E]
 
