@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Directorio principal
 directorio_principal="/home/usuario/directorio/directorio_era5.tp.1000hPa.day.1980-2023"  ## Directorio que contiene a las distintas carpetas que contienen los respectivos "data.grib"
 
