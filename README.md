@@ -18,4 +18,6 @@ Esta modificación nace de que cuando quise descargar los datos de precipitació
 - En el script existe una jerarquía de #, en función del número de # del código, hará referencia a unas indicaciones u otras.
 
 ### Notas
-No es una versión definitiva y es posible que existan fallos no detectados.
+-    No es una versión definitiva y es posible que existan fallos no detectados.
+
+-    "merge_grib.sh": Un script para Ubuntu 24.04 que, una vez completada la descarga de los datos desde CDS y extraigas manualmente los archivos .grib de los .zip generados, procese automáticamente los archivos. El script seleccionará todos las carpetas generadas por la extracción de los .zip, extraerá los archivos "data.grib" de cada unoa. Finalmente, consolidará todos los archivos "data.grib" en un único archivo .nc, listo para su uso.
