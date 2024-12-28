@@ -99,14 +99,14 @@ for start_year in years_range:
     if download_by_month:
         # Descarga mes a mes
         for month in months:  # Iterar sobre los meses
-            file_prefix = f"era5.p.1000hPa.day.{years[0]}.{month}"  # Un solo año
+            file_prefix = f"era5.tp.1000hPa.day.{years[0]}.{month}"  # Un solo año
             for variable in variables:
                 downloaded_file = download_era5_data(variable, years, [month], days, times, grid, area, #pressure_level, 
                                                      file_prefix, download_path)
                 downloaded_files.append(downloaded_file)  # Guardar el nombre del archivo descargado
     else:
         # Descargar todo el año
-        file_prefix = f"era5.p.1000hPa.day.{years[0]}"
+        file_prefix = f"era5.tp.1000hPa.day.{years[0]}"
         for variable in variables:
             downloaded_file = download_era5_data(variable, years, months, days, times, grid, area, #pressure_level,
                                                  file_prefix, download_path)
@@ -118,5 +118,5 @@ if len(years_range) == 1:
 else:
     total_years = f"{years_range.start}-{years_range.stop - 1}"  # Rango de años
 
-output_file = os.path.join(download_path, f"era5.p.1000hPa.day.{total_years}.zip") ## output_file = os.path.join(download_path, f"nombre.{total_years}.zip") --> Nombrar el zip final que comprime todos los archivos descargados
+output_file = os.path.join(download_path, f"era5.tp.1000hPa.day.{total_years}.zip") ## output_file = os.path.join(download_path, f"nombre.{total_years}.zip") --> Nombrar el zip final que comprime todos los archivos descargados
 compress_to_single_archive(output_file, downloaded_files)
