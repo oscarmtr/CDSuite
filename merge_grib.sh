@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directorio principal
-directorio_principal="/home/oscar/Escritorio/era5.p.1000hPa.day.1980-2023"
+directorio_principal="/home/usuario/directorio/era5.tp.1000hPa.day.1980-2023" # Directorio que contiene las distintas carpetas que contienen los respectivos "data.grib"
 
 # Directorio temporal para almacenar los archivos .nc
 directorio_temporal=$(mktemp -d --tmpdir=/var/tmp)
@@ -10,13 +10,13 @@ directorio_temporal=$(mktemp -d --tmpdir=/var/tmp)
 for ano in {1980..2023}; do
   for mes in {01..12}; do
     # Construye el nombre de la carpeta
-    carpeta="$directorio_principal/era5.p.1000hPa.day.$ano.$mes"
+    carpeta="$directorio_principal/era5.tp.1000hPa.day.$ano.$mes"
 
     # Construye la ruta al archivo .grib dentro de la carpeta
     archivo_grib="$carpeta/data.grib"
 
     # Construye el nombre del archivo .nc
-    archivo_nc="$directorio_temporal/era5.p.1000hPa.day.$ano.$mes.nc"
+    archivo_nc="$directorio_temporal/era5.tp.1000hPa.day.$ano.$mes.nc"
 
     # Verifica si el archivo .grib existe y lo procesa
     if [ -f "$archivo_grib" ]; then
@@ -29,7 +29,7 @@ for ano in {1980..2023}; do
 done
 
 # Combina todos los archivos .nc en uno solo
-cdo mergetime "$directorio_temporal/*.nc" "era5_1980_2023.nc"
+cdo mergetime "$directorio_temporal/*.nc" "era5.tp.1000hPa.day.1980.2023.nc"
 
 # Elimina el directorio temporal
 rm -rf "$directorio_temporal"
