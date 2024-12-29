@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
-- family-names: "Óscar"
-  given-names: "Óscar Mata Romero"
+- family-names: "Mata Romero"
+  given-names: "Óscar"
   orcid: "https://orcid.org/0009-0006-3798-2097"
 title: "API_Copernicus_CDS"
 version: 0.5.0
