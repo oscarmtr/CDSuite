@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Óscar"
+  given-names: "Óscar Mata Romero"
+  orcid: "https://orcid.org/0009-0006-3798-2097"
+title: "API_Copernicus_CDS"
+version: 0.5.0
+doi: 10.5281/zenodo.14570087
+date-released: 2024-12-29
+url: "https://github.com/oscarmtr/API_Copernicus_CDS"
