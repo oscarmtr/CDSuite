@@ -6,8 +6,7 @@ import cdsapi
 import os
 import zipfile
 
-def download_era5_data(variable, years, months, days, times, grid, area, file_prefix, download_path, #pressure_level, 
-data_format="grib", download_format="zip"):
+def download_era5_data(variable, years, months, days, times, grid, area, file_prefix, download_path, data_format="grib", download_format="zip"):
     # Construir la solicitud de los datos
     request = {
         "variable": [variable],
@@ -18,8 +17,7 @@ data_format="grib", download_format="zip"):
         "grid": grid,
         "data_format": data_format,
         "download_format": download_format,
-        "area": area#,
-        #"pressure_level": pressure_level
+        "area": area
     }
 
     # Crear el cliente de CDS API
@@ -73,7 +71,6 @@ times = [
     "21:00", "22:00", "23:00"
 ]
 
-#pressure_level = [1000]
 grid = [2.5, 2.5]  ## grid = [x, y] --> Obtienes datos con una resolucion de "x" x "y"
 area = [90, -180, 0, 180]  ## [N, W, S, E]
 
@@ -82,7 +79,7 @@ download_path = "./downloads"  ## download_path = "./directorio1/directorio1.1/"
 
 # Variables que se pueden cambiar
 variables = ["total_precipitation"]  ## variables = ["v"] --> descarga datos de la variable "v" para los años, meses, dias y horas indicados
-years_range = range(1980, 2023, 1)  ## range(x, y, n) --> Empieza desde "x" y hasta "y", con intervalos de "n" años (va de "n" en "n" años)
+years_range = range(1980, 2023, 1)  ## range(x, y, n) --> Empieza desde "x" y hasta "y-1", con intervalos de "n" años (va de "n" en "n" años)
                                     ### si cambias n
 
 # Opción para elegir cómo descargar: mes a mes o todo el año
@@ -101,15 +98,13 @@ for start_year in years_range:
         for month in months:  # Iterar sobre los meses
             file_prefix = f"era5.tp.1000hPa.day.{years[0]}.{month}"  # Un solo año
             for variable in variables:
-                downloaded_file = download_era5_data(variable, years, [month], days, times, grid, area, #pressure_level, 
-                                                     file_prefix, download_path)
+                downloaded_file = download_era5_data(variable, years, [month], days, times, grid, area, file_prefix, download_path)
                 downloaded_files.append(downloaded_file)  # Guardar el nombre del archivo descargado
     else:
         # Descargar todo el año
         file_prefix = f"era5.tp.1000hPa.day.{years[0]}"
         for variable in variables:
-            downloaded_file = download_era5_data(variable, years, months, days, times, grid, area, #pressure_level,
-                                                 file_prefix, download_path)
+            downloaded_file = download_era5_data(variable, years, months, days, times, grid, area, file_prefix, download_path)
             downloaded_files.append(downloaded_file)  # Guardar el nombre del archivo descargado
 
 # Comprimir todos los archivos en un único archivo
