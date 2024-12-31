@@ -73,7 +73,7 @@ times = [
     "21:00", "22:00", "23:00"
 ]
 
-#pressure_level: [1000]
+#pressure_level = [1000]
 grid = [2.5, 2.5]  ## grid = [x, y] --> Obtienes datos con una resolucion de "x" x "y"
 area = [90, -180, 0, 180]  ## [N, W, S, E]
 
