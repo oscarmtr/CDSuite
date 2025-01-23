@@ -8,14 +8,14 @@ dataset = "reanalysis-era5-pressure-levels"
 
 product_type = ["reanalysis"]
 
-variables = ["geopotential"]  ## variables = ["v"] --> descarga datos de la variable "v" para los años, meses, dias y horas indicados
+variables = ["geopotential"]  # variables = ["v"] --> descarga datos de la variable "v" para los años, meses, dias y horas indicados
 
-#Selecciona el rango del tiempo, descargaras datos desde year_i hasta year_f, cada archivo generado, contendra un total de n años del rango seleccionado.
-year_i = 2008 #año de inicio de la solicitud (incluido)
-year_f = 2013 #año de fin de la solicitud (incluido)
-n = 3 #de cuanto en cuantos años realizas la solicitud
+# Selecciona el rango del tiempo, descargaras datos desde year_i hasta year_f, cada archivo generado, contendra un total de n años del rango seleccionado.
+year_i = 1980 # Año de inicio de la solicitud (incluido)
+year_f = 2023 # Año de fin de la solicitud (incluido)
+n = 2 # De cuanto en cuantos años realizas la solicitud
 
-#Selecciona el resto de parametros y añadelos, modificalos o eliminalos segun tus necesidades, ten en cuenta que tambien deberas cambiar los parámetros en el resto del script 
+# Selecciona el resto de parametros y añadelos, modificalos o eliminalos segun tus necesidades, ten en cuenta que tambien deberas cambiar los parámetros en el resto del script 
 months = [
     "01", "02", "03", 
     "04", "05", "06", 
@@ -52,16 +52,19 @@ pressure_level = [
    "10"
     ]
 
-grid = [2.5, 2.5]  ## grid = [x, y] --> Obtienes datos con una resolucion de "x" x "y"
-area = [90, -180, -90, 180]  ## [N, W, S, E]
+grid = [2.5, 2.5]  # grid = [x, y] --> Obtienes datos con una resolucion de "x" x "y"
+area = [90, -180, -90, 180]  # [N, W, S, E]
 datas_format = "grib"
-downloads_format = "zip"
+downloads_format = "zip" # Deberias dejarlo asi
 
-#Selecciona si cada archivo corresponderá a un mes o a un año
-download_by_month = True  ## download_by_month = logic --> Cambiar "logic" a "False" para descargar todo el año en una sola solicitud o cambiar a "True" para solicitar mes a mes
+# Selecciona si cada archivo corresponderá a un mes o a un año
+download_by_month = True  # download_by_month = logic --> Cambiar "logic" a "False" para descargar todo el año en una sola solicitud o cambiar a "True" para solicitar mes a mes
 
 # Ruta de descarga personalizada
-download_path = "./downloads/era5.ght.10hPa"  ## download_path = /home/user/"./directorio1/directorio1.1/" --> Cambia esta ruta para ubicar la descarga del archivo dentro del directorio del user
+download_path = "./downloads/era5.ght.10hPa"  # download_path = /home/user/"./directorio1/directorio1.1/" --> Cambia esta ruta para ubicar la descarga del archivo dentro del directorio del user
+
+# Nombra como se llamara al archivo descargado hasta la seccion del rango temporal
+filename = "era5.10hPa.day" # Teniendo esto en cuenta, el archivo final se llamaria asi: era5.10hPa.day.1980.01.zip o era5.10hPa.day.1980.zip, según las opciones seleccionadas
 
 ###### Fin configura tu descarga ######
 
@@ -117,7 +120,7 @@ for i in range(0, len(years_list), n):
         for year in years:
             for month in months:
                 # Usar el año y el mes actuales para el nombre del archivo
-                file_prefix = f"era5.z.allhPa.hour.{year}.{month}"   # Cambia el nombre del archivo descargado
+                file_prefix = f"{filename}.{year}.{month}"   # Cambia el nombre del archivo descargado
                 for variable in variables:
                     downloaded_file = download_era5_data(
                         product_type, pressure_level, variable, [year], [month], days, times, grid, area, file_prefix, download_path
@@ -128,7 +131,7 @@ for i in range(0, len(years_list), n):
         # Usar el rango de años para el nombre del archivo
         start_year = years[0]
         end_year = years[-1]
-        file_prefix = f"era5.z.allhPa.hour.{start_year}-{end_year}"   # Cambia el nombre del archivo descargado
+        file_prefix = f"{filename}.{start_year}-{end_year}"   # Cambia el nombre del archivo descargado
         for variable in variables:
             downloaded_file = download_era5_data(
                 product_type, pressure_level, variable, years, months, days, times, grid, area, file_prefix, download_path
