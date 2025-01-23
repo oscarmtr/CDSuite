@@ -117,7 +117,7 @@ for i in range(0, len(years_list), n):
         for year in years:
             for month in months:
                 # Usar el año y el mes actuales para el nombre del archivo
-                file_prefix = f"era5.z.allhPa.hour.{year}.{month}"
+                file_prefix = f"era5.z.allhPa.hour.{year}.{month}"   # Cambia el nombre del archivo descargado
                 for variable in variables:
                     downloaded_file = download_era5_data(
                         product_type, pressure_level, variable, [year], [month], days, times, grid, area, file_prefix, download_path
@@ -128,7 +128,7 @@ for i in range(0, len(years_list), n):
         # Usar el rango de años para el nombre del archivo
         start_year = years[0]
         end_year = years[-1]
-        file_prefix = f"era5.z.allhPa.hour.{start_year}-{end_year}"
+        file_prefix = f"era5.z.allhPa.hour.{start_year}-{end_year}"   # Cambia el nombre del archivo descargado
         for variable in variables:
             downloaded_file = download_era5_data(
                 product_type, pressure_level, variable, years, months, days, times, grid, area, file_prefix, download_path
