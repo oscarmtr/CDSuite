@@ -61,10 +61,10 @@ downloads_format = "zip" # Deberias dejarlo asi
 download_by_month = True  # download_by_month = logic --> Cambiar "logic" a "False" para descargar todo el año en una sola solicitud o cambiar a "True" para solicitar mes a mes
 
 # Ruta de descarga personalizada
-download_path = "./downloads/era5.ght.10hPa"  # download_path = /home/user/"./directorio1/directorio1.1/" --> Cambia esta ruta para ubicar la descarga del archivo dentro del directorio del user
+download_path = "./downloads/era5.z.10hPa"  # download_path = "./directorio1/directorio1.1/" --> Cambia esta ruta para ubicar la descarga del archivo
 
 # Nombra como se llamara al archivo descargado hasta la seccion del rango temporal
-filename = "era5.10hPa.day" # Teniendo esto en cuenta, el archivo final se llamaria asi: era5.10hPa.day.1980.01.zip o era5.10hPa.day.1980.zip, segun las opciones seleccionadas
+filename = "era5.z.10hPa.day" # Teniendo esto en cuenta, el archivo final se llamaria asi: era5.z.10hPa.day.1980.01.zip o era5.z.10hPa.day.1980.zip, segun las opciones seleccionadas
 
 ###### Fin configura tu descarga ######
 
