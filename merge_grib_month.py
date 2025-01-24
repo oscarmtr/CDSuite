@@ -8,8 +8,8 @@ from tempfile import mkdtemp
 ###### Inicio configuracion ######
 year_i = 1980  # Año inicio (Incluido)
 year_f = 2023  # Año fin (Incluido)
-month_i = 1  # Mes inicio
-month_f = 12  # Mes fin
+month_i = 1  # Mes inicio (Incluido)
+month_f = 12  # Mes fin (Incluido)
 filename = "era5.tp.sfc.hour" # Nombra como se llama el archivo descargado/carpetas antes de la seccion del rango temporal
 
 directorio_principal = "/home/user/download" # Directorio que contiene a las distintas carpetas que contienen los respectivos "data.grib"
