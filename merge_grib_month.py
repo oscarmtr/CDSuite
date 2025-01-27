@@ -13,6 +13,7 @@ month_f = 12  # Mes fin (Incluido)
 filename = "era5.tp.sfc.hour" # Nombra como se llama el archivo descargado/carpetas antes de la seccion del rango temporal
 
 directorio_principal = "/home/user/download" # Directorio que contiene a las distintas carpetas que contienen los respectivos "data.grib"
+directorio_final = "home/user/directoriofinal" # Directorio donde se generara el arhivo .nc
 ###### Fin configuracion ######
 
 def main():
@@ -35,10 +36,10 @@ def main():
                 else:
                     print(f"Archivo no encontrado: {archivo_grib}")
 
-        # Verificar si hay archivos .nc temporales antes de combinar
+        # Verificar si hay archivos .nc temporale# Puedes cambiar el nombre del archivo final que te devolverá en el directorio ejecutado todo los "data.grib" s antes de combinar
         archivos_nc = [os.path.join(directorio_temporal, f) for f in os.listdir(directorio_temporal) if f.endswith(".nc")]
         if archivos_nc:
-            archivo_salida = f"{filename}.{year_i}-{year_f}.nc" # Puedes cambiar el nombre del archivo final que te devolverá en el directorio ejecutado todo los "data.grib" transformados a un sólo archivo .nc final.
+            archivo_salida = os.path.join(directorio_final, f"{filename}.{year_i}-{year_f}.nc"
             subprocess.run(["cdo", "mergetime", *archivos_nc, archivo_salida], check=True)
             print(f"Archivos combinados en: {archivo_salida}")
         else:
