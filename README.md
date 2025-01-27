@@ -3,8 +3,8 @@ Modificación del API de Copernicus Climate Data Store (CDS) para obtener secuen
 
 ## Cómo usar
 - Con **"DataDownload.py"** podras configurar bajo que parámetros y que información solicitas a CDS.
-- Con **"merge_grib_month.py"** podrás, una vez completada la descarga de los datos desde CDS por mes, procesar automáticamente los archivos. El script seleccionará todos los archivos .zip, extraerá los archivos "data.grib" de cada uno y los consolidará todos en un único archivo .nc, listo para su uso. Este script funcionará solo para archivos con este formato: era5.v.ht.freq.YYYY.MM p. ej.: "era5.z.10hPa.day.1980.01".
-- Con **"merge_grib_year.py"** harás lo mismo que con **"merge_grib_month.py"** pero para datos anuales con **n > 1**, es decir, este script funcionará solo para archivos con este formato: era5.v.ht.freq.YYYY-YYYY p. ej.: "era5.z.10hPa.day.1980-1981", "era5.z.10hPa.day.1980-1982"...
+- Con **"merge_grib_month.py"** podrás, una vez completada la descarga de los datos desde CDS por mes, procesar automáticamente los archivos. El script seleccionará todos los archivos .zip, extraerá los archivos "data.grib" de cada uno y los consolidará todos en un único archivo .nc, listo para su uso. Este script funcionará solo para archivos con este formato de escala temporal: era5.v.ht.freq.YYYY.MM p. ej.: "era5.z.10hPa.day.1980.01".
+- Con **"merge_grib_year.py"** harás lo mismo que con **"merge_grib_month.py"** pero para datos anuales con **n > 1**, es decir, este script funcionará solo para archivos con este formato de escala temporal: era5.v.ht.freq.YYYY-YYYY p. ej.: "era5.z.10hPa.day.1980-1981", "era5.z.10hPa.day.1980-1982"...
 
  
  Cada script está preconfigurado a modo de ejemplo.
