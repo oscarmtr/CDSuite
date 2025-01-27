@@ -40,7 +40,7 @@ def main():
                         archivo_grib = next((os.path.join(directorio_temporal, f) for f in archivos_extraidos if f.endswith("data.grib")), None)
 
                         if archivo_grib and os.path.isfile(archivo_grib):
-                            # Convertir el archivo .grib a .nc
+                            # Convertir el archivo .grib a .nc (construye la operacion de CDO)
                             subprocess.run(["cdo", "-f", "nc", "copy", archivo_grib, archivo_nc], check=True)
                             print(f"Procesando archivo: {archivo_grib} de {archivo_zip}")
                         else:
