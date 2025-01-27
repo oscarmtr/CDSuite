@@ -36,7 +36,7 @@ def main():
                 else:
                     print(f"Archivo no encontrado: {archivo_grib}")
 
-        # Verificar si hay archivos .nc temporale# Puedes cambiar el nombre del archivo final que te devolverá en el directorio ejecutado todo los "data.grib" s antes de combinar
+        # Verificar si hay archivos .nc temporales
         archivos_nc = [os.path.join(directorio_temporal, f) for f in os.listdir(directorio_temporal) if f.endswith(".nc")]
         if archivos_nc:
             archivo_salida = os.path.join(directorio_final, f"{filename}.{year_i}-{year_f}.nc"
