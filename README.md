@@ -22,3 +22,6 @@ Esta modificación nace de que cuando quise descargar los datos de precipitació
      -    *era5.v.ht.form.YYYY.MM* 
 - Es posible que haya algunas líneas que debas modificar para obtener lo que quieras.
 -    No es una versión definitiva y es posible que existan fallos no detectados.
+
+## Referencias
+Schulzweida, Uwe. (2023). CDO User Guide (2.3.0). ![zenodo 10020800](https://github.com/user-attachments/assets/e7a6ab6b-1f89-4157-b95b-04267e6df9b6)
