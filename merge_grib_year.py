@@ -9,8 +9,15 @@ from tempfile import mkdtemp
 ###### Inicio configuracion ######
 year_i = 1980  # Año inicio (Incluido)
 year_f = 2023  # Año fin (Incluido)
-n = 2  # De cuánto en cuántos años has realizado la solicitud
+n = 2  # De cuánto en cuantos años has realizado la solicitud
 filename = "era5.z.10hPa.hour"  # Nombre base de los archivos descargados/archivos ZIP
+format = "hour" # Indica el formato de las datos, si se ha descargado por horas (hour), días...
+
+# Operaciones CDO a realizar. 
+## option = 1 -> copia y fusiona .grib a un unico .nc
+## option = 2 -> calcula la media diaria y fusiona .grib a un unico .nc
+## option = 3 -> calcula el sumatorio diario y fusiona .grib a un unico .nc
+option = 1 
 
 directorio_principal = "/home/user/directorio/era5.z.10hPa.hour.1980-2023"  # Directorio que contiene los archivos ZIP
 directorio_final = "/home/user/directoriofinal" # Directorio donde se generará el archivo .nc
@@ -41,8 +48,17 @@ def main():
 
                     if archivo_grib and os.path.isfile(archivo_grib):
                         # Convertir el archivo .grib a .nc
-                        subprocess.run(["cdo", "-f", "nc", "copy", archivo_grib, archivo_nc], check=True) # Construye la operacion de CDO
-                        print(f"Procesando archivo: {archivo_grib} de {archivo_zip}")
+                        if option == 1:
+                            subprocess.run(["cdo", "-f", "nc", "copy", archivo_grib, archivo_nc], check=True)
+                            print(f"Procesando archivo: {archivo_grib} de {archivo_zip}")
+                        elif option == 2:
+                            subprocess.run(["cdo", "-f", "nc", "daymean", archivo_grib, archivo_nc], check=True)
+                            print(f"Procesando archivo: {archivo_grib} de {archivo_zip}")
+                        elif option == 3:
+                            subprocess.run(["cdo", "-f", "nc", "daysum", archivo_grib, archivo_nc], check=True)
+                            print(f"Procesando archivo: {archivo_grib} de {archivo_zip}")
+                        else:
+                            print("Elige un \033[3moption\033[0m valido entre 1 y 3")
                     else:
                         print(f"Archivo data.grib no encontrado en: {archivo_zip}")
             else:
@@ -54,12 +70,26 @@ def main():
         # Verificar si hay archivos .nc temporales antes de combinar
         archivos_nc = [os.path.join(directorio_temporal, f) for f in os.listdir(directorio_temporal) if f.endswith(".nc")]
         if archivos_nc:
-            # Establecer la ruta de salida en el directorio principal
-            archivo_salida = os.path.join(directorio_final, f"{filename}.{year_i}-{year_f}.nc")
-            subprocess.run(["cdo", "mergetime", *archivos_nc, archivo_salida], check=True)
-            print(f"Archivos combinados en: {archivo_salida}")
+            if option == 1:
+                filename1 = filename
+                filename1 = filename1.replace(format,"")
+                archivo_salida1 = os.path.join(directorio_final, f"{filename1}hour.{year_i}-{year_f}.nc")
+                subprocess.run(["cdo", "mergetime", *archivos_nc, archivo_salida1], check=True)
+                print(f"Archivos combinados en: {archivo_salida1}")
+            elif option == 2:
+                filename2 = filename
+                filename2 = filename2.replace(format,"")
+                archivo_salida2 = os.path.join(directorio_final, f"{filename2}day.{year_i}-{year_f}.nc")
+                subprocess.run(["cdo", "mergetime", *archivos_nc, archivo_salida2], check=True)
+                print(f"Archivos combinados en: {archivo_salida2}")
+            elif option == 3:
+                filename3 = filename
+                filename3 = filename3.replace(format,"")
+                archivo_salida3 = os.path.join(directorio_final, f"{filename3}dailysum.{year_i}-{year_f}.nc")
+                subprocess.run(["cdo", "mergetime", *archivos_nc, archivo_salida3], check=True)
+                print(f"Archivos combinados en: {archivo_salida3}")
         else:
-            print("No se encontraron archivos para combinar.")
+            print("No se encontraron archivos para combinar o revisa \033[3moption\033[0m y \033[3mformat\033[0m en el apartado #Verificar si hay archivos .nc temporales# del script.")
 
     finally:
         # Eliminar el directorio temporal
