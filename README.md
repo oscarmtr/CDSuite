@@ -24,4 +24,4 @@ Esta modificación nace de que cuando quise descargar los datos de precipitació
 -    No es una versión definitiva y es posible que existan fallos no detectados.
 
 ## Referencias
-Schulzweida, Uwe. (2023). CDO User Guide (2.3.0). ![zenodo 10020800](https://github.com/user-attachments/assets/e7a6ab6b-1f89-4157-b95b-04267e6df9b6)
+Schulzweida, Uwe. (2023). CDO User Guide (2.3.0). Zenodo. https://doi.org/10.5281/zenodo.10020800
