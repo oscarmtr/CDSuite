@@ -1,5 +1,5 @@
 # Copernicus Climate Data Store Suite (CDSuite)
-Repositorio de herramientas para la obtención y gestión de datos de Copernicus Climate Data Store (CDS). La principal herramienta consiste en la modificación del API de CDS para obtener secuencias de datos evitando las restricciones por la limitación de solicitud de descarga de datos simultáneos, seguidos de programas para facilitar su gestión.
+Repositorio de herramientas para la obtención y gestión de datos de Copernicus Climate Data Store (CDS). La principal herramienta consiste en la modificación del API de CDS para obtener secuencias de datos evitando las restricciones por la limitación de solicitud de descarga de datos simultáneos. También incluye programas adicionales para facilitar la gestión de estos datos.
 
 ## Cómo usar
 - Con la modificación del API **"DataDownload.py"** podrás configurar bajo que parámetros y que información solicitas a CDS.
