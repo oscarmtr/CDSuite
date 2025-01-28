@@ -89,7 +89,7 @@ def main():
                 subprocess.run(["cdo", "mergetime", *archivos_nc, archivo_salida3], check=True)
                 print(f"Archivos combinados en: {archivo_salida3}")
         else:
-            print("No se encontraron archivos para combinar o revisa \033[3moption\033[0m y \033[3mformat\033[0m en el apartado #Verificar si hay archivos .nc temporales# del script.")
+            print("No se encontraron archivos para combinar o revisa \033[3moption\033[0m, \033[3mformat\033[0m y el apartado \033[3m#Verificar si hay archivos .nc temporales#\033[0m del script.")
 
     finally:
         # Eliminar el directorio temporal
