@@ -24,4 +24,5 @@ Esta modificación nace de que cuando quise descargar los datos de precipitació
 -    No es una versión definitiva y es posible que existan fallos no detectados.
 
 ## Referencias
-Schulzweida, Uwe. (2023). CDO User Guide (2.3.0). Zenodo. https://doi.org/10.5281/zenodo.10020800
+- Contains modified Copernicus Climate Change Service information 2024. Neither the European Commission nor ECMWF is responsible for any use that may be made of the Copernicus information or data it contains. https://cds.climate.copernicus.eu/how-to-api
+- Schulzweida, Uwe. (2023). CDO User Guide (2.3.0). Zenodo. https://doi.org/10.5281/zenodo.10020800
