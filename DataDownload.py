@@ -15,7 +15,7 @@ year_i = 1980 # Año de inicio de la solicitud (incluido)
 year_f = 2023 # Año de fin de la solicitud (incluido)
 n = 2 # De cuanto en cuantos años realizas la solicitud
 
-# Selecciona el resto de parametros (entendiendose por parametros a months, days...) y añadelos, modificalos o eliminalos segun tus necesidades, ten en cuenta que tambien deberas cambiar los parámetros en el resto del script 
+# Selecciona el resto de parametros (entendiendose por parametros a months, days..., downloads_format) y añadelos, modificalos o eliminalos segun tus necesidades, ten en cuenta que tambien deberas cambiar los parámetros en el resto del script 
 months = [
     "01", "02", "03", 
     "04", "05", "06", 
