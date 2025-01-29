@@ -1,4 +1,6 @@
 [![cdsuite](https://github.com/user-attachments/assets/4c9698da-5b13-4981-a376-df23b5d376a2)](https://github.com/oscarmtr/CDSuite)
+[![license](https://github.com/user-attachments/assets/f58a7dee-3fdd-414f-b179-9fa4c134150d)](https://www.gnu.org/licenses/agpl-3.0.html)
+
 
 # Copernicus Climate Data Store Suite (CDSuite)
 Repositorio de herramientas para la obtención y gestión de datos de Copernicus Climate Data Store (CDS). La principal herramienta consiste en la modificación del API de CDS para obtener secuencias de datos evitando las restricciones por la limitación de solicitud de descarga de datos simultáneos. También incluye programas adicionales para facilitar la gestión de estos datos.
