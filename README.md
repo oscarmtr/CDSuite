@@ -1,6 +1,10 @@
-[![cdsuite](https://github.com/user-attachments/assets/4c9698da-5b13-4981-a376-df23b5d376a2)](https://github.com/oscarmtr/CDSuite)
+[![cdsuite1](https://github.com/user-attachments/assets/b240a777-e22a-4c77-8e44-96a41789845b)](https://github.com/oscarmtr/CDSuite)
+[![license1](https://github.com/user-attachments/assets/2c3dba82-5de0-4ed5-9e0d-88a470f0d586)](https://www.gnu.org/licenses/agpl-3.0.html)
+[![doi1](https://github.com/user-attachments/assets/51caa891-c1f7-4f34-be4c-0d31eb9b9831)](https://doi.org/10.5281/zenodo.14570087)
+
+<!--[![cdsuite](https://github.com/user-attachments/assets/4c9698da-5b13-4981-a376-df23b5d376a2)](https://github.com/oscarmtr/CDSuite)
 [![license](https://github.com/user-attachments/assets/f58a7dee-3fdd-414f-b179-9fa4c134150d)](https://www.gnu.org/licenses/agpl-3.0.html)
-[![doi](https://github.com/user-attachments/assets/81be1084-ae2c-40ec-bdb9-3b84f1e84fa9)](https://doi.org/10.5281/zenodo.14570087)
+[![doi](https://github.com/user-attachments/assets/81be1084-ae2c-40ec-bdb9-3b84f1e84fa9)](https://doi.org/10.5281/zenodo.14570087)-->
 
 # Copernicus Climate Data Store Suite (CDSuite)
 Repositorio de herramientas para la obtención y gestión de datos de Copernicus Climate Data Store (CDS). La principal herramienta consiste en la modificación del API de CDS para obtener secuencias de datos evitando las restricciones por la limitación de solicitud de descarga de datos simultáneos. También incluye programas adicionales para facilitar la gestión de estos datos.
