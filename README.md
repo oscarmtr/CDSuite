@@ -28,5 +28,4 @@ Esta modificación nace de que cuando quise descargar los datos de precipitació
 
 ## Referencias
 - Contains modified Copernicus Climate Change Service information 2024. Neither the European Commission nor ECMWF is responsible for any use that may be made of the Copernicus information or data it contains. https://cds.climate.copernicus.eu/how-to-api
-- OpenAI. (2024). ChatGPT (GPT-4.5) [Modelo de lenguaje amplio]. https://chat.openai.com/chat
 - Schulzweida, Uwe. (2023). CDO User Guide (2.3.0). Zenodo. https://doi.org/10.5281/zenodo.10020800
