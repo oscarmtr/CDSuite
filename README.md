@@ -24,7 +24,7 @@ Aun así, dependiendo de la variable y la escala temporal que necesites, deberá
 Esta modificación nace de que cuando quise descargar los datos de precipitación total desde 1980 a 2023 para todos los meses, todos los días y todas las horas de una vez, me devolvía un error indicando que había superado el límite de solicitud, por lo que tras probar con cual era el límite permitido (normalmente son las opciones simultáneas máximas que te deja seleccionar en la interfaz gráfica de descarga de datos de CDS) terminé de configurar el .py para que descargara todos los datos sin la necesidad de estar cerca del ordenador para solicitarle otra serie de datos cada vez que terminara la anterior. 
 
 ## A tener en cuenta
-- No se recomienda variar la estructura del nombre del archivo con el fin de evitar posibles errores.
+- No se recomienda variar el orden de la estructura del nombre del archivo con el fin de evitar posibles errores.
      - *era5.v.ht.form.YYYY-YYYY*
      - *era5.v.ht.form.YYYY.MM* 
 - Es posible que haya algunas líneas que debas modificar para obtener lo que quieras.
