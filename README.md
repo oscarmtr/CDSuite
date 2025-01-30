@@ -11,8 +11,8 @@ Repositorio de herramientas para la obtención y gestión de datos de Copernicus
 
 ## Cómo usar
 - Con la modificación del API **`DataDownload.py`** podrás configurar los parámetros e información que deseas solicitar a CDS.
-- Con **`merge_grib_month.py`** podrás, una vez completada la descarga de los datos desde CDS por mes, procesar automáticamente los archivos. El script seleccionará todos los archivos .zip, extraerá los archivos `data.grib` de cada uno, te permitirá realizar distintas operaciones con Climate Data Operators (CDO) para procesar los datos y los consolidará todos en un único archivo .nc, listo para su uso. Este script funcionará solo para archivos con este formato de escala temporal: *era5.v.ht.form.YYYY.MM* p. ej.: "era5.z.10hPa.day.1980.01".
-- Con **`merge_grib_year.py`** harás lo mismo que con **`merge_grib_month.py`** pero para datos anuales con **`n > 1`**, es decir, este script funcionará solo para archivos con este formato de escala temporal: *era5.v.ht.form.YYYY-YYYY* p. ej.: "era5.z.10hPa.day.1980-1981", "era5.z.10hPa.hour.1980-1982"...
+- Con **`merge_grib_month.py`** podrás, una vez completada la descarga de los datos desde CDS por mes, procesar automáticamente los archivos. El script seleccionará todos los archivos .zip, extraerá los archivos `data.grib` de cada uno, te permitirá realizar distintas operaciones con Climate Data Operators (CDO) para procesar los datos y los consolidará todos en un único archivo .nc, listo para su uso. Este script funcionará solo para archivos con este formato de escala **temporal**: *era5.v.ht.form.YYYY.MM* p. ej.: "era5.z.10hPa.day.1980.01".
+- Con **`merge_grib_year.py`** harás lo mismo que con **`merge_grib_month.py`** pero para datos anuales con **`n > 1`**, es decir, este script funcionará solo para archivos con este formato de escala **temporal**: *era5.v.ht.form.YYYY-YYYY* p. ej.: "era5.z.10hPa.day.1980-1981", "era5.z.10hPa.hour.1980-1982"...
 
 Cada script está preconfigurado a modo de ejemplo.
 
