@@ -13,7 +13,7 @@ variables = ["geopotential"]  # variables = ["v"] --> descarga datos de la varia
 # Selecciona el rango del tiempo, descargaras datos desde year_i hasta year_f, cada archivo generado, contendra un total de n años del rango seleccionado.
 year_i = 1980 # Año de inicio de la solicitud (incluido)
 year_f = 2023 # Año de fin de la solicitud (incluido)
-n = 2 # De cuanto en cuantos años realizas la solicitud
+n = 1 # De cuanto en cuantos años realizas la solicitud
 
 # Selecciona el resto de parametros (entendiendose por parametros a months, days..., downloads_format) y añadelos, modificalos o eliminalos segun tus necesidades, ten en cuenta que tambien deberas cambiar los parámetros en el resto del script 
 months = [
