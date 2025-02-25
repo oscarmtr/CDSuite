@@ -62,7 +62,7 @@ def main():
                                 subprocess.run(["cdo", "-f", "nc", "daysum", archivo_grib, archivo_nc], check=True)
                                 print(f"Procesando archivo: {archivo_grib} de {archivo_zip}") 
                             else:
-                                 print("Elige un \033[3moption\033[0m valido entre 1 y 3")
+                                 print("Elige un \033[3moption\033[0m valido entre 1 y 4")
                         else:
                             print(f"Archivo data.grib no encontrado en: {archivo_zip}")
                 else:
