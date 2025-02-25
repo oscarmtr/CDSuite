@@ -11,13 +11,14 @@ year_i = 1980  # Año inicio (Incluido)
 year_f = 2023  # Año fin (Incluido)
 month_i = 1  # Mes inicio (Incluido)
 month_f = 12  # Mes fin (Incluido)
-filename = "era5.tp.sfc.hour"  # Nombra como se llama el archivo descargado/carpetas antes de la seccion del rango temporal
+filename = "era5.z.10hPa.hour"  # Nombra como se llama el archivo descargado/carpetas antes de la seccion del rango temporal
 format = "hour" # Indica el formato de las datos, si se ha descargado por horas (hour), días...
 
 # Operaciones CDO a realizar. 
 ## option = 1 -> copia y fusiona .grib a un unico .nc
 ## option = 2 -> calcula la media diaria y fusiona .grib a un unico .nc
-## option = 3 -> calcula el sumatorio diario y fusiona .grib a un unico .nc
+## option = 3 -> calcula la media mensual y fusiona .grib a un unico .nc
+## option = 4 -> calcula el sumatorio diario y fusiona .grib a un unico .nc
 option = 1
 
 directorio_principal = "/home/user/download"  # Directorio que contiene los archivos ZIP descargados
@@ -55,8 +56,11 @@ def main():
                                 subprocess.run(["cdo", "-f", "nc", "daymean", archivo_grib, archivo_nc], check=True)
                                 print(f"Procesando archivo: {archivo_grib} de {archivo_zip}")
                             elif option == 3:
-                                subprocess.run(["cdo", "-f", "nc", "daysum", archivo_grib, archivo_nc], check=True)
+                                subprocess.run(["cdo", "-f", "nc", "monmean", archivo_grib, archivo_nc], check=True)
                                 print(f"Procesando archivo: {archivo_grib} de {archivo_zip}")
+                            elif option == 4:
+                                subprocess.run(["cdo", "-f", "nc", "daysum", archivo_grib, archivo_nc], check=True)
+                                print(f"Procesando archivo: {archivo_grib} de {archivo_zip}") 
                             else:
                                  print("Elige un \033[3moption\033[0m valido entre 1 y 3")
                         else:
@@ -82,9 +86,15 @@ def main():
             elif option == 3:
                 filename3 = filename
                 filename3 = filename3.replace(format,"")
-                archivo_salida3 = os.path.join(directorio_final, f"{filename3}dailysum.{year_i}-{year_f}.nc")
+                archivo_salida3 = os.path.join(directorio_final, f"{filename3}month.{year_i}-{year_f}.nc")
                 subprocess.run(["cdo", "mergetime", *archivos_nc, archivo_salida3], check=True)
                 print(f"Archivos combinados en: {archivo_salida3}")
+            elif option == 4:
+                filename4 = filename
+                filename4 = filename4.replace(format,"")
+                archivo_salida4 = os.path.join(directorio_final, f"{filename4}dailysum.{year_i}-{year_f}.nc")
+                subprocess.run(["cdo", "mergetime", *archivos_nc, archivo_salida4], check=True)
+                print(f"Archivos combinados en: {archivo_salida4}")
         else:
             print("No se encontraron archivos para combinar o revisa \033[3moption\033[0m, \033[3mformat\033[0m y el apartado \033[3m#Verificar si hay archivos .nc temporales#\033[0m del script.")
 
