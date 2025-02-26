@@ -5,7 +5,7 @@ authors:
   given-names: "Óscar"
   orcid: "https://orcid.org/0009-0006-3798-2097"
 title: "CDSuite"
-version: 0.8.0
+version: 0.9.0
 doi: 10.5281/zenodo.14570087
 date-released: 2024-12-29
 url: "https://github.com/oscarmtr/CDSuite"
