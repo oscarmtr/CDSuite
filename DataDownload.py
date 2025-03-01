@@ -64,7 +64,7 @@ download_by_month = True  # download_by_month = logic --> Cambiar "logic" a "Fal
 download_path = "./downloads/era5.z.10hPa"  # download_path = "./directorio1/directorio1.1/" --> Cambia esta ruta para ubicar la descarga del archivo (si el directorio no se encuentra, el script lo crea)
 
 # Nombra como se llamara al archivo descargado hasta la seccion del rango temporal
-filename = "era5.z.10hPa.hour" # Teniendo esto en cuenta, el archivo final se llamaria asi: era5.z.10hPa.day.1980.01.zip o era5.z.10hPa.day.1980.zip, segun las opciones seleccionadas
+filename = "era5.z.10hPa.hour" # Teniendo esto en cuenta, el archivo final se llamaria asi: era5.z.10hPa.hour.1980.01.zip o era5.z.10hPa.hour.1980.zip, segun las opciones seleccionadas
 ###### Fin configuracion ######
 
 
